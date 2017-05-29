@@ -1,0 +1,48 @@
+velocityCurve
+{
+	Key = [Velocity] [% of Max Thrust] [slope] [slope]
+}
+
+*** Definitions ***
+
+	[Velocity] is measured in Meters per Seconds
+
+	[% of Max Thrust] is represented as a float value between 0 and 1, though technically you can leave that range but that'd be weird.
+
+	[slope] specifies the slope of the curve at that point; the first specifies the slope coming from the left, the other specifies it coming from the right. This can be used to specify the curve more exactly with fewer inputs.
+
+
+*** Additional Infomation ***
+
+	The velocity curve also does not impact fuel consumption at all, only thrust. 
+	The fuel consumption is calculated using the rated thrust of the engine (max thrust at full throttle, min thrust at throttle off, linear interpolation in between), not the final thrust once it has been affected by the velocity curve. 
+
+
+*** Example ***
+
+	velocityCurve
+	{
+		key = 0 0.5 0 0
+		key = 1000 1 0 0
+		key = 2000 0.5 0 0
+		key = 2400 0 0 0
+	}
+
+	For the TurboFan code that you posted, at 2000 m/s it produces half of its rated thrust, while its fuel consumption assumes that it is producing its full rated thrust; basically, its true Isp gets cut in half while the indicated Isp stays where it is.
+
+
+*** Credits ***
+
+	Greys
+		http://forum.kerbalspaceprogram.com/index.php?/profile/57109-greys/
+	ferram4
+		http://forum.kerbalspaceprogram.com/index.php?/profile/21328-ferram4/
+
+
+*** References ***
+
+Velocity curve and atmosphere curve
+	http://forum.kerbalspaceprogram.com/index.php?/topic/46452-velocity-curve-and-atmosphere-curve/
+
+[INFO] KSP floatCurves and you - the magic of tangents.
+	http://forum.kerbalspaceprogram.com/index.php?/topic/84201-info-ksp-floatcurves-and-you-the-magic-of-tangents/

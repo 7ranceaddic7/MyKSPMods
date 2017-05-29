@@ -1,0 +1,5 @@
+ExsurgenEngineering is part of the B9 Aeropace pack and has its own terms and conditions.
+
+EngineThrustController.dll is not to be distributed and was not done by me nor do I have the source codes. If you don't want it you can delete it and have a constant thrust on your SRB.
+
+Everything else is done by me and you have my permission to do whatever you want with them.

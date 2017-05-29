@@ -1,0 +1,65 @@
+thrustCurve
+{
+    key = [fuel ratio] [flow rate] [slope] [slope]
+}
+
+*** Definitions ***
+
+	[fuel ratio] is the percentage of fuel remaining where full fuel is 1 and 0 is empty.
+
+	[flow rate] is the percentage of designed fuel flow. Setting flow rate to values >1 will produce initial spike in thrust.
+
+	[slope] specifies the slope of the curve at that point; the first specifies the slope coming from the left, the other specifies it coming from the right. This can be used to specify the curve more exactly with fewer inputs.
+
+
+*** Example ***
+
+
+MODULE
+    {
+        name = ModuleEnginesFX
+
+		useThrustCurve = True
+
+		thrustCurve
+		{
+			key = 1 0.8
+			key = 0.95 1
+			key = 0.3 1
+			key = 0.1 0.35
+			key = 0.05 0.35
+			key = 0 0.1
+}
+
+
+key = 1 0.8			//  full tank, 80% thrust
+
+key = 0.95 1		//  95% propellant, 100% thrust
+
+key = 0.3 1			// 	30% propellant, 100% thrust
+
+key = 0.1 0.35		//  10% propellant, 35% thrust
+
+key = 0.05 0.35		//  5% propellant, 35% thrust
+
+key = 0 0.1			//  empty tank, 10% thrust
+
+
+*** Credits ***
+
+Kartoffelkuchen
+	http://forum.kerbalspaceprogram.com/index.php?/profile/108501-kartoffelkuchen/
+
+nli2work
+	http://forum.kerbalspaceprogram.com/index.php?/profile/106805-nli2work/
+
+Enceos
+	http://forum.kerbalspaceprogram.com/index.php?/profile/110725-enceos/
+
+*** References ***
+
+SRB Thrust Curves
+	http://forum.kerbalspaceprogram.com/index.php?/topic/142626-srb-thrust-curves/
+
+A More realistic booster flamout mod ?
+	http://forum.kerbalspaceprogram.com/index.php?/topic/142904-a-more-realistic-booster-flamout-mod/

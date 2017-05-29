@@ -1,0 +1,27 @@
+emission = [engine power] [percentage of emission]
+
+*** Definitions ***
+
+	[engine power] is the level of engine power
+
+	[percentage of emission] is the percentage of emission/speed/etc
+
+
+*** Example ***
+
+emission = 0.0 0.0
+emission = 0.05 0.0
+emission = 0.075 0.25
+emission = 1.0 1.25
+
+
+*** Credits ***
+
+Nazari1382
+	http://forum.kerbalspaceprogram.com/index.php?/profile/62013-nazari1382/
+
+*** References ***
+
+
+HotRockets! Particle FX Replacement + Tutorial
+	http://forum.kerbalspaceprogram.com/index.php?/topic/59710-hotrockets-particle-fx-replacement-tutorial/

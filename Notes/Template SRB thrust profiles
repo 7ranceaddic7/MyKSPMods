@@ -1,0 +1,74 @@
+Template SRB thrust profiles
+
+*** Neutral Profile ***
+// 	Rod & Tube design
+
+key = 0 0.01 0 0
+key = 0.05 0.88 9.8 9.8
+key = 0.1 0.99 0 0
+key = 0.93 1 0 0
+key = 1 0.1 0 0
+
+
+*** Neutral Profile ***
+// 	Star design
+
+key = 0 0.01 0 0
+key = 0.05 0.95 10 4.5
+key = 0.075 0.99 0 0
+key = 0.25 0.95 0 0
+key = 0.7 0.95 0 0
+key = 0.87 1 0 0
+key = 0.9 0.95 -5 -5
+key = 1 0.1 0 0
+
+
+*** Progressive Profile ***
+// 	Tubular design
+
+key = 0 0.01 0 0
+key = 0.05 0.5 0 0
+key = 0.2 0.55 0.42 0.42
+key = 0.93 1 0 0
+key = 1 0.1 0 0
+
+
+*** Dual Thrust Profile ***
+//  Multi-fin design
+
+key = 0 0 0 0
+key = 0.075 0.9 7 7
+key = 0.1 1 0 0
+key = 0.11 1 0 -2.5
+key = 0.135 0.9 -7 -7
+key = 0.2 0.2 0 0
+key = 0.95 0.2 0 0
+key = 1 0 0 0
+
+
+*** Two-step Profile ***
+//  Dual Composition design
+
+key = 0 0 0 0
+key = 0.075 0.9 7 7
+key = 0.1 1 0 0
+key = 0.11 1 0 -2.5
+key = 0.135 0.9 -7 -7
+key = 0.2 0.2 0 0
+key = 0.75 0.2 0 0
+key = 0.85 0.66 0 0
+key = 0.9 0.3 -6.584227 -6.584227
+key = 1 0 0 0
+
+
+*** Regressive Profile ***
+// 	Double Anchor design
+
+key = 0 0 0 0
+key = 0.025 0.5 50.28 50.28
+key = 0.03 0.95 43.1 16.5
+key = 0.0375 1 0.4 0.4
+key = 0.085 0.95 -0.4 -0.4
+key = 0.3 0.9 0 0
+key = 0.95 0.3 -0.4 0
+key = 1 0 0 0

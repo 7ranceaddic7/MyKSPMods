@@ -1,0 +1,25 @@
++PART[MassiveBooster]
+{
+	%name = AS_MassiveBooster_ModuleSRBThrust
+
+	%title = S1 SRB-KD25k "ModuleSRBThrust" Solid Fuel Booster
+	%description = Test Subject using ModuleSRBThrust
+	%techRequired = start
+
+	MODULE
+	{
+		name = ModuleSRBThrust
+		resourceName = SolidFuel
+		thrustCurve
+		{
+		
+			key = 0.01 0.01
+			key = 0.16 0.51
+			key = 0.39 0.82
+			key = 0.62 0.7
+			key = 0.85 1.0
+			key = 1.0 0.86
+
+		}
+	}
+}

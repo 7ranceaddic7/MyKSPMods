@@ -1,0 +1,28 @@
++PART[MassiveBooster]
+{
+	%name = AS_MassiveBooster_thrustCurve
+
+	%title = S1 SRB-KD25k "thrustCurve" Solid Fuel Booster
+	%description = Test Subject using thrustCurve
+	%techRequired = start
+
+	@MODULE[ModuleEngines]
+	{
+
+	+useThrustCurve = true
+
+	+thrustCurve
+		{
+			key = 0 0 0 0.0012
+			key = 0.15 0.5 0 0
+			key = 0.65 0.9 0.8 0.008
+			key = 8.5 0.98 0.0135 0.0017
+			key = 13.5 0.99 0 0
+			key = 22 1 0 -0.0067
+			key = 50 0.725 -0.006 -0.0015
+			key = 80 0.825 -0.0012 -0.0035
+			key = 109 0.54 -0.0098 -0.01
+			key = 125 0 -0.0092 0
+		}
+	}
+}

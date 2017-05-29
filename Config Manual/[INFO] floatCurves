@@ -1,0 +1,96 @@
+floatCurves
+
+nameOfCurve
+{
+	key = [value] [value] [in-tangent] [out-tangent]
+}
+
+	What is a floatCurve? Its a wrapper around a Unity Animation Curve. Essentially, its a way to describe an arbitrary line on a 2d graph using a few points rather than a formula.
+
+	Unity Animation Curves are a type of spline (cubic Hermite splines, I'm informed) and you can think of it as unity threading something that behaves like a stuff, springy steel cable through the points you set.
+
+	This lets you do things like describe how the playback volume of a sound should change with the throttle, or how a wheel's steering should change with speed, in a nonlinear way using only a few lines in a text file, and without complex maths.
+
+
+*** Examples ***
+
+velocityCurve
+{
+    key = 1000 0 0 0
+    key = 850 0.2 0 0
+    key = 0 1 0 0
+}
+
+
+emission = 0.0 0.0
+emission = 0.05 0.0
+emission = 0.075 0.25
+emission = 1.0 1.25
+
+
+atmosphereCurve
+{
+    key = 0 370
+    key = 1 320
+}
+
+
+Tangents
+
+	In its most basic form, each point on a floatCurve will operate in 'Free' mode, where Unity fits a spline to the entire curve making it a single smooth, unbroken line.
+
+	However, that can cause your curve to behave differently than you expect it. If that curve is driving the thrust of an engine, or the steering of a wheel, or the length of a rocket's flame, it could look very very wrong, and you'll be scratching your head trying to fix it and adding tons of points to the curve trying to disciple it.
+
+	Thankfully, you don't need to do that.
+
+	A little known fact about points on a floatCurve is that they can take 2 optional parameters, in-tangent and out-tangent, that describe the angle of the curve as it enters and leaves the point.
+
+
+*** Description of Curve ***
+
+torqueCurve
+{
+    key = 0 250
+    key = 3.35 500 36.70368 -1.219512
+    key = 15.65 485 -3.517569 -16.3017
+    key = 52.3 100 -3.71531 -15.77211
+    key = 53.64 0
+}
+
+Curve begins at 0 0
+
+    key = 0 250
+
+dataPoint 0 - Torque has jumps to 250 and increases to 1st dataPoint.  50% torque at 0m/s
+
+    key = 3.35 500 36.70368 -1.219512
+
+dataPoint1- Torque at 3.35m/s has ramped-up to 500.  Curve enters dataPoint1 at 36.70368 degrees and exits dataPoint1 at -1.219512 degrees.  Decreasing to dataPoint2.
+
+	key = 15.65 485 -3.517569 -16.3017
+
+dataPoint2 - Torque at 15.65m/s has decreased to 485. Curve enters dataPoint2 at -3.517569 degrees and exits dataPoint2 at -16.3017 degrees. Decreasing to dataPoint3.
+
+    key = 52.3 100 -3.71531 -15.77211
+
+dataPoint3 - Torque at 52.3m/s has decreased to 100. Curve enters dataPoint at -3.71531 degrees and exits at -15.77211 degrees. Decreasing to dataPoint4. 
+
+(Note: The entry and exit angles between dataPoints 2 and 3 create a convex parabola.)
+
+    key = 53.64 0
+
+dataPoint4 - Torque at 53.64m/s has decreased to 0. This is the termination of the curve.
+
+
+*** Credits ***
+	r4m0n
+		http://forum.kerbalspaceprogram.com/index.php?/profile/5404-r4m0n/
+
+
+*** References ***
+
+[Unity] FloatCurve editor 1.0
+	http://forum.kerbalspaceprogram.com/threads/83246
+
+FloatCurve editor 1.0 (download)
+	http://www.mumech.com/uploads/KSPCurveEditor.unitypackage

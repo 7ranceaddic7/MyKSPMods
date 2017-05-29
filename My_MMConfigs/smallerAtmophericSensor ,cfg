@@ -1,0 +1,9 @@
+//this patch makes the atmopheric sensor smaller
+//Author: samamstar
+
+@PART[sensorAtmosphere]:FINAL
+{
+	//set this factor bigger to make the part bigger, smaller to shrink it
+	@rescaleFactor = 0.33
+	//I suggest 0.33, that puts it right around the scale of the thermometer & accelerometer
+}

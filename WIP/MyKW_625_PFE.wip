@@ -1,0 +1,29 @@
++PART[KW1mFairingPFE]:NEEDS[KWRocketry]
+{
+	%node_stack_bottom = 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 1
+	%node_stack_top = 0.0, 0.217, 0.0, 0.0, 1.0, 0.0, 1
+	%node_stack_top = 0.0, 0.588, 0.0, 0.0, 1.0, 0.0, 1
+
+	%rescaleFactor = 0.625
+
+	%name = 625_PFE
+	%title = 0.625 P-Fairing Base Expanded
+	%description = A half-sized version of the 1.25
+	%entryCost = 750
+	%cost = 300
+	%mass = 0.125
+
+	%breakingForce = 125
+	%breakingTorque = 125
+
+	@MODULE[ModuleProceduralFairing]
+	{
+		%baseRadius = 0.652
+		%maxRadius = 0.652
+	}
+
+	@MODULE[ModuleDecouple]
+	{
+		 %ejectionForce = 50
+	}
+}
