@@ -1,0 +1,5 @@
+/Remove ExtendedAntennaProgression MoreFairings.cfg Parts
+!PART[fairingSize0-LB]
+!PART[fairingSize4-LB]
+!PART[fairingSize5-LB]
+!PART[fairingSize6-LB]
