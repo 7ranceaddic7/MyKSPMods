@@ -1,0 +1,14 @@
+order of all patches
+
+All patches marked :FIRST are run
+All patches with no pass specified are run (this is called the legacy pass)
+For each installed mod*, in alphabetical order:
+All patches marked :BEFORE[mod] are run
+All patches marked :FOR[mod] are run
+All patches marked :AFTER[mod] are run
+All patches marked :FINAL are run
+* ModuleManager considers a mod to be installed if one of the following 3 conditions is met:
+
+A DLL named mod.dll exists somewhere in GameData
+A patch marked :FOR[mod] exists
+A directory exists in GameData named mod/

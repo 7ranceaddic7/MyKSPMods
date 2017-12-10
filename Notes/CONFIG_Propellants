@@ -1,0 +1,160 @@
+		CONFIG
+		{
+			name = HTP
+			PROPELLANT
+			{
+				ratio = 1.0
+				name = HTP
+				DrawGauge = True
+			}
+			IspSL = 0.177
+			IspV = 0.465
+			thrusterPower = 0.255
+		}
+
+		CONFIG
+		{
+			name = Hydrazine
+			PROPELLANT
+			{
+				ratio = 1.0
+				name = Hydrazine
+				DrawGauge = True
+			}
+			IspSL = 0.274
+			IspV = 0.72
+			thrusterPower = 0.275
+		}
+
+		CONFIG
+		{
+			name = NitrousOxide
+			PROPELLANT
+			{
+				ratio = 1.0
+				name = NitrousOxide
+				DrawGauge = True
+			}
+			IspSL = 0.2
+			IspV = 0.525
+			thrusterPower = 0.236
+		}
+
+		CONFIG
+		{
+			name = Helium
+			PROPELLANT
+			{
+				ratio = 1.0
+				name = Helium
+				DrawGauge = True
+			}
+			IspSL = 0.203
+			IspV = 0.453
+			thrusterPower = 0.072
+		}
+
+		CONFIG
+		{
+			name = Nitrogen
+			PROPELLANT
+			{
+				ratio = 1.0
+				name = Nitrogen
+				DrawGauge = True
+			}
+			cost = -10
+			IspSL = 0.1001462
+			IspV = 0.195
+			thrusterPower = 0.114
+		}
+
+		CONFIG
+		{
+			name = MMH+NTO
+			PROPELLANT
+			{
+				name = MMH
+				ratio = 0.5
+				DrawGauge = True
+			}
+			PROPELLANT
+			{
+				name = NTO
+				ratio = 0.50
+			}
+			IspSL = 0.362
+			IspV = 0.952
+			thrusterPower = 0.445
+		}
+
+		CONFIG
+		{
+			name = MMH+MON3
+			PROPELLANT
+			{
+				name = MMH
+				ratio = 0.499
+				DrawGauge = True
+			}
+			PROPELLANT
+			{
+				name = MON3
+				ratio = 0.501
+			}
+			IspSL = 0.362
+			IspV = 0.952
+			thrusterPower = 0.445
+		}
+
+		CONFIG
+		{
+			name = UDMH+NTO
+			PROPELLANT
+			{
+				name = UDMH
+				ratio = 0.413
+				DrawGauge = True
+			}
+			PROPELLANT
+			{
+				name = NTO
+				ratio = 0.587
+			}
+			IspSL = 0.361
+			IspV = 0.943
+			thrusterPower = 0.442
+		}
+
+		CONFIG
+		{
+			name = Aerozine50+NTO
+			PROPELLANT
+			{
+				name = Aerozine50
+				ratio = 0.502
+				DrawGauge = True
+			}
+			PROPELLANT
+			{
+				name = NTO
+				ratio = 0.498
+			}
+			IspSL = 0.366
+			IspV = 0.955
+			thrusterPower = 0.455
+		}
+
+		CONFIG
+		{
+			name = Cavea-B
+			PROPELLANT
+			{
+				ratio = 1.0
+				name = CaveaB
+				DrawGauge = True
+			}
+			IspSL = 0.274
+			IspV = 0.939
+			thrusterPower = 0.425
+		}
