@@ -1,0 +1,291 @@
+// 	 ******************************************************************************
+//	***			File:	AS_TestFlight_Engines(generic).cfg						 ***
+//	***		  Author:	TranceaddicT											 ***
+//	***	Contributors:															 ***
+//	***	 Description:	Adds TestFlight to ALL engines present					 ***
+//	***	 	 License:	CC BY-NC-SA 4.0											 ***
+//  ***	More information available at https://github.com/KSP-RO/TestFlight/wiki  ***
+// 	 ******************************************************************************
+
+
+@PART[*]:HAS[#category=Engine],!MODULE[TestFlightCore]]:FOR[TestFlight]
+{
+	MODULE
+	{
+		name = TestFlightInterop
+	}
+
+	MODULE
+	{
+		name = TestFlightCore
+//		configuration =
+
+//		techTransfer =
+//		techTransferMax =
+
+		startFlightData = 0
+		maxData = 100000
+
+//		failureRateModifier = 1
+
+//		rndRate = 1
+//		rndCost = 1
+//		rndMaxData = 75000
+//		scienceDataValue = 0
+	}
+
+	MODULE
+	{
+		name = FlightDataRecorder_Engine
+		//configuration =
+		flightDataMultiplier = 10
+		flightDataEngineerModifier = 0.25
+	}
+
+//======================== RELIABILITY ========================//
+
+	MODULE
+	{
+		name = TestFlightReliability
+//		configuration =
+
+//		reliabilityCurve
+//		{
+//			key = 0 0.0001
+//			key = 1000 0.00001
+//			key = 10000 0.000001
+//			key = 100000 0.0000001
+//		}
+	}
+
+	MODULE
+	{
+		TestFlightEnabled = True
+		name = TestFlightReliability_EngineCycle
+//		engineConfig =
+		cycle = 1
+		thrustModifier = 1
+		idleDecayRate = 0
+//		engineID =
+	}
+
+//	MODULE
+//	{
+//		name = TestFlightReliability_DynamicPressure
+//
+//		reliabilityAtPressure	// Pa, not kPa
+//		{
+//			key = 0 1.0
+//			key = 50000 1.0
+//		}
+//	}
+
+//	MODULE
+//	{
+//		name = TestFlightReliability_SkinTemperature
+//
+//		temperatureCurve
+//		{
+//			key =
+//			key =
+//		}
+//	}
+
+//	MODULE
+//	{
+//		name = TestFlightReliability_InternalTemperature
+//
+//		temperatureCurve
+//		{
+//			key =
+//			key =
+//		}
+//	}
+
+//======================== FAILURES ========================//
+
+	MODULE
+	{
+		TestFlightEnabled = True
+		name = TestFlightFailure_IgnitionFail
+		failureTitle = Failed to ignite.
+		failureType = mechanical
+		severity = major
+
+		engineID = all
+		weight = 2								//	2 = Rare, 4 = Seldom, 8 = Average, 16 = Often, 32 = Common
+		duFail = 3000
+
+		restoreIgnitionCharge = False
+		oneShot = True
+		ignorePressureOnPad = True
+//		additionalFailureChance = 0.0
+
+		baseIgnitionChance						// defaul 1.0
+		{
+			key = 0 1.0
+			key = 100000 0.9
+		}
+
+		pressureCurve							// defaul 1.0
+		{
+			key = 0 1.0
+			key = 50000 0.9
+		}
+
+//		ingitionUseMultiplier					// default 1.0
+//		{
+//			key = 0 1
+//			key = 1 1
+//		}
+
+		Repair = none
+	}
+
+	MODULE
+	{
+		TestFlightEnabled = True
+		name = TestFlightFailure_ReducedMaxThrust
+		failureTitle = Loss of Thrust.
+		failureType = mechanical
+		severity = major
+
+		engineID = all
+		weight = 2					//	2 = Rare, 4 = Seldom, 8 = Average, 16 = Often, 32 = Common
+		duFail = 1000
+
+		thrustReduction = 0.33
+	}
+
+	MODULE
+	{
+		TestFlightEnabled = True
+		name = TestFlightFailure_ShutdownEngine
+		failureTitle = Engine Shutdown.
+		failureType = software
+		severity = major
+
+		engineID = all
+		weight = 2					//	2 = Rare, 4 = Seldom, 8 = Average, 16 = Often, 32 = Common
+		duFail = 1000
+
+		REPAIR
+		{
+			repairChance = 75
+			requiresEVA = False
+			canBeRepairedOnSplashed = True
+			canBeRepairedByRemote = True
+			canBeRepairedInFlight = True
+			dataScale = 1
+			dataSize = 1
+		}
+
+		duRepair = 2500
+	}
+
+	MODULE
+	{
+		TestFlightEnabled = True
+		name = TestFlightFailure_Explode
+		failureTitle = Explosion!
+		failureType = mechanical
+		severity = major
+
+		weight = 2					//	2 = Rare, 4 = Seldom, 8 = Average, 16 = Often, 32 = Common
+		duFail = 4000
+	}
+
+	MODULE
+	{
+		TestFlightEnabled = True
+		name = TestFlightFailure_LockGimbal
+		failureTitle = Loss of Control.
+		failureType = mechanical
+		serverity = minor
+
+		weight = 2					//	2 = Rare, 4 = Seldom, 8 = Average, 16 = Often, 32 = Common
+		duFail = 1000
+
+		REPAIR
+		{
+			repairChance = 50
+			requiresEVA = True
+			canBeRepairedOnSplashed = True
+			canBeRepairedByRemote = False
+			canBeRepairedInFlight = True
+			dataScale = 1
+			dataSize = 1
+		}
+
+		duRepair = 1500
+	}
+
+	MODULE
+	{
+		name = TestFlightFailure_GimbalCenter
+		gimbalTransformName = RANDOM
+
+		weight = 2					//	2 = Rare, 4 = Seldom, 8 = Average, 16 = Often, 32 = Common
+		duFail = 1000
+
+		REPAIR
+		{
+			repairChance = 50
+			requiresEVA = True
+			canBeRepairedOnSplashed = True
+			canBeRepairedByRemote = False
+			canBeRepairedInFlight = True
+			dataScale = 1
+			dataSize = 1
+		}
+
+		duRepair = 1500
+	}
+
+	MODULE
+	{
+		name = TestFlightFailure_GimbalSpeed
+		gimbalTransformName = RANDOM
+
+		weight = 2					//	2 = Rare, 4 = Seldom, 8 = Average, 16 = Often, 32 = Common
+		duFail = 1000
+
+		REPAIR
+		{
+			repairChance = 50
+			requiresEVA = True
+			canBeRepairedOnSplashed = True
+			canBeRepairedByRemote = False
+			canBeRepairedInFlight = True
+			dataScale = 1
+			dataSize = 1
+		}
+
+		duRepair = 1500
+	}
+
+	MODULE
+	{
+		TestFlightEnabled = True
+		name = TestFlightFailure_EnginePerformanceLoss
+		failureTitle = Engine Performance Degredation.
+		failureType = software
+		severity = minor
+
+		engineID = all
+		ispMultiplier = 0.7
+		ispMultiplierJitter = 0.1
+
+		weight = 2					//	2 = Rare, 4 = Seldom, 8 = Average, 16 = Often, 32 = Common
+		duFail = 1000
+
+		Repair = none
+	}
+
+	MODULE
+	{
+		name = TestFlightFailure_EngineCoolant
+		engineID = all
+		heatMultiplier = 3
+	}
+}

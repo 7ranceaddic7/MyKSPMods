@@ -1,0 +1,15 @@
+//	\GameData\RealFuels-Stockalike\Stockalike_KWRocketry.cfg
+//	Make changes to config
+//	lm240         ignitionsAvailable = 1	=>	2
+
+
+@PART[KW1mengineVestaVR1]:FOR[RealFuels_StockEngines] //KW Vesta VR1
+{
+@MODULE[ModuleEngineConfigs]
+	{
+		@CONFIG[Kerosene+LqdOxygen]
+		{
+			%ignitionsAvailable = 2
+		}
+	}
+}

@@ -1,0 +1,21 @@
+// 	 ******************************************************************************
+//	***			File:	AS_Antenna_Extender.cfg									 ***
+//	***		  Author:	TranceaddicT											 ***
+//	***	Contributors:															 ***
+//	***	 Description:															 ***
+//	***	 	 License:	CC BY-NC-SA 4.0											 ***
+// 	 ******************************************************************************
+
++PART[RTLongAntenna3]:FINAL
+{
+	name = deviceExtension
+	%node_stack_top = 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0
+	%category = Structural
+	%title = UL-101 Radial Extender
+	%manufacturer = Unlimited, Ltd.
+	%description = A plesant discovery after an engineer glued a pencil on the end of a CommTech EXP-VR-2T and started using it to poke the Mission Controller from across the room.
+	%tags = extender
+
+	!MODULE[ModuleRTAntenna] {}
+	!MODULE[ModuleSPUPassive] {}
+}

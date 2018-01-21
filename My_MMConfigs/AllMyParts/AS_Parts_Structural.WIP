@@ -1,0 +1,55 @@
+// 	 **********************************************************************************
+//	***			File:	AS_Parts_Structural.cfg
+//	***		  Author:	TranceaddicT
+//	***	Contributors:
+//	***	 Description:	A collection of Structural Parts
+//	***	 	 License:	CC BY-NC-SA 4.0
+//	 **********************************************************************************
+
++PART[RTLongAntenna3]:NEEDS[RemoteTech]:FINAL
+{
+	%name = deviceExtender
+	%author = TranceaddicT
+
+//	attachment rules: stack, srfAttach, allowStack, allowSrfAttach, allowCollision
+	%attachRules = 1,1,1,1,1
+
+//	 node rules: x, y, z, angx, angy, angz, size
+	%node_stack_top = 0.0, 0.15, 0.0, 0.0, 1.0, 0.0, 0
+
+	%TechRequired = Start
+	%category = Structural
+	%title = UL-101 Radial Extender
+	%manufacturer = Unlimited, Ltd.
+	%description = A plesant discovery after an engineer glued a pencil to the end of a CommTech EXP-VR-2T and started poking the Mission Controller from across the room.
+	%tags = build connect construct extend structur support
+
+	!MODULE[ModuleRTAntenna] {}
+	!MODULE[ModuleSPUPassive] {}
+
+	MODULE
+	{
+		name = TweakScale
+		type = free
+	}
+
+	@MODULE[ModuleAnimateGeneric]
+	{
+		%actionGUIName = Toggle
+		%allowManualControl = true
+		%actionAvailable = true
+		%eventAvailableFlight = true
+		%eventAvailableEditor = true
+		%eventAvailableEVA = true
+		%evaDistance = 5
+	}
+}
+
++PART[structuralMiniNode]:FINAL
+{
+    %name = structuralMicroNode.cfg
+	%author = Daveroski
+    %title = My Micronode
+    %description = A pint-sized Structural Micronode
+	%rescaleFactor = 0.5
+}

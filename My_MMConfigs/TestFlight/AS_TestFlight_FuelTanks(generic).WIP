@@ -1,0 +1,146 @@
+// 	 ******************************************************************************
+//	***			File:	AS_TestFlight_FuelTanks(generic).cfg					 ***
+//	***		  Author:	TranceaddicT											 ***
+//	***	Contributors:															 ***
+//	***	 Description:	Adds TestFlight to ALL FuelTanks 						 ***
+//	***	 	 License:	CC BY-NC-SA 4.0											 ***
+//  ***	More information available at https://github.com/KSP-RO/TestFlight/wiki  ***
+// 	 ******************************************************************************
+
+@PART[*]:HAS[#category=FuelTank],!MODULE[TestFlightCore]]:FOR[TestFlight]
+{
+	MODULE
+	{
+		name = TestFlightInterop
+	}
+
+	MODULE
+	{
+		name = TestFlightCore
+//		configuration =
+
+//		techTransfer =
+//		techTransferMax =
+
+		startFlightData = 0
+		maxData = 100000
+
+//		failureRateModifier = 1
+
+//		rndRate = 1
+//		rndCost = 1
+//		rndMaxData = 75000
+//		scienceDataValue = 0
+	}
+
+	MODULE
+	{
+		name = FlightDataRecorder_Resources
+//		configuration =
+		flightDataMultiplier = 10
+		flightDataEngineerModifier = 0.25
+//		emptyThreshold = 0.1
+	}
+
+//======================== RELIABILITY ========================//
+
+	MODULE
+	{
+		name = TestFlightReliability
+//		configuration =
+
+//		reliabilityCurve
+//		{
+//			key = 0 0.0001
+//			key = 1000 0.00001
+//			key = 10000 0.000001
+//			key = 100000 0.0000001
+//		}
+	}
+
+	MODULE
+	{
+		TestFlightEnabled = True
+		name = TestFlightReliability_EngineCycle
+//		engineConfig =
+		cycle = 1
+		thrustModifier = 1
+		idleDecayRate = 0
+//		engineID =
+	}
+
+//	MODULE
+//	{
+//		name = TestFlightReliability_DynamicPressure
+//
+//		reliabilityAtPressure	// Pa, not kPa
+//		{
+//			key = 0 1.0
+//			key = 50000 1.0
+//		}
+//	}
+
+//	MODULE
+//	{
+//		name = TestFlightReliability_SkinTemperature
+//
+//		temperatureCurve
+//		{
+//			key =
+//			key =
+//		}
+//	}
+
+//	MODULE
+//	{
+//		name = TestFlightReliability_InternalTemperature
+//
+//		temperatureCurve
+//		{
+//			key =
+//			key =
+//		}
+//	}
+
+//======================== FAILURES ========================//
+
+	MODULE
+	{
+		TestFlightEnabled = True					//	determines if the module is currently running under TestFlight
+		name = TestFlightFailure_ResourceLeak
+		failureTitle = Tank is leaking
+		failureType = mechanical
+		severity = failure
+		weight = 16
+		duFail = 25
+
+		resourceToLeak = random						// can be set to a specific tank resourse, random, all
+		initialAmount = 5
+		perSecondAmount = 1
+// optionally specify values to be in percent of maximum resource capacity or percent of current resource level. By adding the suffixes %t or %c respectively.
+		calculatePerTick = True 					//	If set to true then any percent values will be re-calculated each tick. Iffalse then they will only be calculated initially at the time of failure. Default values is false.
+
+		REPAIR
+		{
+			repairChance = 90
+			requiresEVA = True
+			canBeRepairedInFlight = True
+			canBeRepairedOnSplashed = True
+			canBeRepairedByRemote = False
+		}
+
+		duRepair = 50
+	}
+
+	MODULE
+	{
+		TestFlightEnabled = True					//	determines if the module is currently running under TestFlight
+		name = TestFlightFailure_Explode
+		failureTitle = Explosion!
+		failureType = mechanical
+		severity = major
+
+		weight = 2
+		duFail = 400
+	}
+}
