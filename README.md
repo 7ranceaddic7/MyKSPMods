@@ -8,10 +8,13 @@
 (http://badges.mit-license.org)
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/7ranceaddic7/MyKSPMods?style=plastic)
-[https://shields.io/]
+(https://shields.io/)
 
-![Coverage Status](https://coveralls.io/repos/github/7ranceaddic7/MyKSPMods/badge.svg?branch=master)(https://coveralls.io/github/7ranceaddic7/MyKSPMods?branch=master)
-[https://coveralls.io/]
+![Coverage Status](https://coveralls.io/repos/github/7ranceaddic7/MyKSPMods/badge.svg?branch=master)
+
+(https://coveralls.io/github/7ranceaddic7/MyKSPMods?branch=master)
+
+(https://coveralls.io/)
 
 ---
 
