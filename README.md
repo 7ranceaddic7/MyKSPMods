@@ -8,7 +8,7 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/7ranceaddic7/MyKSPMods?style=plastic)
 (https://shields.io/)
 
-
+[![Coverage Status](https://coveralls.io/repos/github/7ranceaddic7/MyKSPMods/badge.svg)](https://coveralls.io/github/7ranceaddic7/MyKSPMods)
 
 
 ---
