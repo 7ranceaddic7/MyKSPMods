@@ -1,11 +1,13 @@
 # MyKSPMods
 
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=7ranceaddic7&repo=MyKSPMods)](https://github.com/7ranceaddic7/MyKSPMods)
+![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=7ranceaddic7&repo=MyKSPMods)
 ![7ranceaddic7's github stats](https://github-readme-stats.vercel.app/api?username=7ranceaddic7&show_icons=true)
-[![License](http://img.shields.io/:license-mit-blue.svg?style=plastic)](http://badges.mit-license.org)
-- **[MIT license](http://opensource.org/licenses/mit-license.php)**
 
-![GitHub commit activity](https://img.shields.io/github/commit-activity/w/7ranceaddic7/MyKSPMods?style=plastic)
+[![GitHub](https://img.shields.io/github/license/7ranceaddic7/MyKSPMods?style=plastic)]
+
+(http://badges.mit-license.org)
+
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/w/7ranceaddic7/MyKSPMods?style=plastic)]
 [https://shields.io/]
 
 [![Coverage Status](https://coveralls.io/repos/github/7ranceaddic7/MyKSPMods/badge.svg?branch=master)](https://coveralls.io/github/7ranceaddic7/MyKSPMods?branch=master)
