@@ -11,10 +11,9 @@
 (https://shields.io/)
 
 ![Coverage Status](https://coveralls.io/repos/github/7ranceaddic7/MyKSPMods/badge.svg?branch=master)
-
 (https://coveralls.io/github/7ranceaddic7/MyKSPMods?branch=master)
 
-(https://coveralls.io/)
+
 
 ---
 
