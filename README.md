@@ -35,7 +35,7 @@
     - 🍴 Fork this repo!
 
 - **Option 2**
-    - 👯 Clone this repo to your local machine using `https://github.com/joanaz/HireDot2.git`
+    - 👯 Clone this repo to your local machine using `https://github.com/7ranceaddic7/MyKSPMods`
 
 ### Step 2
 
@@ -43,4 +43,4 @@
 
 ### Step 3
 
-- 🔃 Create a new pull request using <a href="https://github.com/joanaz/HireDot2/compare/" target="_blank">`https://github.com/joanaz/HireDot2/compare/`</a>.
+- 🔃 Create a new pull request using <a href="https://github.com/7ranceaddic7/MyKSPMods/compare/" target="_blank">`https://github.com/7ranceaddic7/MyKSPMods/compare/`</a>.
